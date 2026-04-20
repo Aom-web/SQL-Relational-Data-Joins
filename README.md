@@ -1,4 +1,4 @@
-# SQL Relational Data Joins
+## SQL Relational Data Joins
 
 ## Overview
 Application of different types on join to answer questions from two tables in SQL
