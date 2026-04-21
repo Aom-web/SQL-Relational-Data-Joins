@@ -27,13 +27,26 @@ ON Customers.id = Orders.id;
 
 which customer has no order in the table?
 
-<img width="447" height="328" alt="3" src="https://github.com/user-attachments/assets/94ee1c9f-2cf9-4e29-a0c7-300419ea64f1" />
+```SQL
+SELECT Customers.id, Customers.name, Orders.Amount
+FROM Customers
+LEFT JOIN Orders
+ON Customers.id = Orders.id;
+```
+<img width="170" height="135" alt="1" src="https://github.com/user-attachments/assets/158c98e6-9d76-4db3-9f6f-73e250ca7f8c" />
 
 ### 2a 
 
 To only see customers with no order displayed.
 
-<img width="472" height="263" alt="4" src="https://github.com/user-attachments/assets/2b2f4c77-cb8f-40c0-abc3-8da44d11ed26" />
+```SQL
+SELECT Customers.id, Customers.name, Orders.Amount
+FROM Customers
+LEFT JOIN Orders
+ON Customers.id = Orders.id
+WHERE Orders.Amount is NULL;
+```
+<img width="181" height="67" alt="2" src="https://github.com/user-attachments/assets/2b4eb3a3-de11-42aa-9a46-b83fdafe2306" />
 
 ### 2b 
 
@@ -43,13 +56,25 @@ To make the NULL cell in Question 2 above to show 'NO ORDER'
 
 re-write the SQL code for LEFT JOIN introducing COALESCE
 
-<img width="599" height="331" alt="5" src="https://github.com/user-attachments/assets/2185a8ac-93e9-4d62-8bae-9e574b49ec4e" />
+```SQL
+SELECT Customers.id, Customers.name,COALESCE (Orders.Amount, 'NO ORDER')
+FROM Customers
+LEFT JOIN Orders
+ON Customers.id = Orders.id;
+```
+<img width="355" height="134" alt="3" src="https://github.com/user-attachments/assets/c189e7d9-b76f-40b2-87ab-15e322d22a71" />
 
 ### Step 2
 
 rename the 3rd column of the table by introducing the 'AS' clause.
 
-<img width="646" height="320" alt="6" src="https://github.com/user-attachments/assets/f0d0acc8-ddb6-4998-af4a-d3d753831689" />
+```SQL
+SELECT Customers.id, Customers.name,COALESCE (Orders.Amount, 'NO ORDER') AS Amount
+FROM Customers
+LEFT JOIN Orders
+ON Customers.id = Orders.id;
+```
+<img width="198" height="141" alt="4" src="https://github.com/user-attachments/assets/af2829a6-2868-48ac-84f0-5b2714b9b17f" />
 
 ## Right Join
 
@@ -57,10 +82,22 @@ rename the 3rd column of the table by introducing the 'AS' clause.
 
 Identify all orders placed, including those that are not linked to a registered customers name
 
-<img width="419" height="329" alt="7" src="https://github.com/user-attachments/assets/d68c7786-0441-41e5-8203-e254b92a9dc5" />
+```SQL
+SELECT Customers.id, Customers.name, Orders.Amount
+FROM Customers
+RIGHT JOIN Orders
+ON Customers.id = Orders.id;
+```
+<img width="167" height="134" alt="5" src="https://github.com/user-attachments/assets/9048b655-95f4-42e9-b095-7e39bcfa5e44" />
 
 ## Full Join
 
  List every unique customer and every unique order record to identify both customers who haven't ordered anything and orders that aren't assigned to a customer
 
-<img width="470" height="344" alt="8" src="https://github.com/user-attachments/assets/2d369d07-da40-4dcd-bed0-18fcae2c6d6a" />
+```SQL
+SELECT Customers.id, Customers.name, Orders.Amount
+FROM Customers
+FULL JOIN Orders
+ON Customers.id = Orders.id;
+```
+<img width="178" height="163" alt="6" src="https://github.com/user-attachments/assets/804be874-a396-422a-89b1-2decce4cae8d" />
