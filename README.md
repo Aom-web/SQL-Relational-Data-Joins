@@ -35,11 +35,11 @@ which customer has no order in the table?
 
 ## Right Join
 ### Question 3
-which customer has an order without a name input
+Identify all orders placed, including those that are not linked to a registered customers name
 
 <img width="419" height="329" alt="7" src="https://github.com/user-attachments/assets/d68c7786-0441-41e5-8203-e254b92a9dc5" />
 
 ## Full Join
-### List all customers including the ones without a purchase and name
+### List every unique customer and every unique order record to identify both customers who haven't ordered anything and orders that aren't assigned to a customer
 
 <img width="470" height="344" alt="8" src="https://github.com/user-attachments/assets/2d369d07-da40-4dcd-bed0-18fcae2c6d6a" />
