@@ -13,7 +13,13 @@ Application of different types on join to answer questions from two tables in SQ
 
 what are the names of customers with orders less than 800?
 
-<img width="409" height="312" alt="2" src="https://github.com/user-attachments/assets/780f72ef-ec3d-479f-bd01-365bfc527e2d" />
+```SQL
+SELECT Customers.id, Customers.name, Orders.Amount
+FROM Customers
+JOIN Orders
+ON Customers.id = Orders.id;
+```
+<img width="169" height="116" alt="1" src="https://github.com/user-attachments/assets/89027a40-42d6-4eee-bd00-9e832265082f" />
 
 ## Left Join
 
